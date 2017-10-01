@@ -12,9 +12,9 @@ echo "Yeni kullanici bilgilerini giriniz"
 echo "###################################"
 echo "Yeni kullanici adi: "
 read kullanici
-echo "Yeni sifre: "
-read sifre
-echo "$kullanici    pptpd   $sifre  *" >> /etc/ppp/chap-secrets
+echo "Yeni parola: "
+read parola
+echo "$kullanici    pptpd   $parola  *" >> /etc/ppp/chap-secrets
 service pptpd restart
 echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 sysctl -p
@@ -32,7 +32,7 @@ echo "VPN bilgileri"
 echo "############################"
 echo "VPN iP Adresi: " $ip
 echo "Kullanici adi: " $kullanici
-echo "Sifre: "         $sifre
+echo "Parola: "        $parola
 echo "############################"
 
 exit
